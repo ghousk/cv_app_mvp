@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners android:radius="@dimen/app_home_item_corner_radius"/>
+            <solid
+                android:color="@color/app_item_image_overlay" />
+            <gradient
+                android:angle="270"
+                android:startColor="@android:color/transparent"
+                android:endColor="@color/app_item_image_overlay"
+                android:type="linear" />
+        </shape>
+    </item>
+</selector>

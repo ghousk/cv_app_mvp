@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_home_item_corner_radius">8dp</dimen>
+    <dimen name="detail_screen_iv_height">200dp</dimen>
+    <dimen name="text_fields_horizontal_padding">10dp</dimen>
+    <dimen name="screen_horizontal_padding">20dp</dimen>
+    <dimen name="button_standard_height">60dp</dimen>
+    <dimen name="body_text_standard_vertical_margin">10dp</dimen>
+    <dimen name="body_text_button_vertical_margin">20dp</dimen>
+    <dimen name="detail_screen_body_text_horizontal_padding">10dp</dimen>
+</resources>

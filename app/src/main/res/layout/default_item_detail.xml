@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:layout_gravity="top"
+        android:elevation="8dp">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/default_offerdetail_view_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:contentInsetStart="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            android:clipToPadding="false">
+
+            <include layout="@layout/title_back_btn_action_bar" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:background="@android:color/black">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_screen_iv_height"
+                android:layout_gravity="center">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/item_detail_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ghous"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:background="@android:color/white"
+                    android:scaleType="fitCenter"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:weightSum="1"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/text_fields_horizontal_padding"
+                android:paddingEnd="@dimen/text_fields_horizontal_padding"
+                android:background="@android:color/darker_gray">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/item_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:gravity="start|bottom"
+                    android:textColor="@android:color/black"
+                    style="@style/heading_large_bold"
+                    android:textAllCaps="false"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="How to Demolish an Entire Civilization and Still Feel Good About Yourself in the Morning"
+                    />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sub_item_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.5"
+                    android:textColor="@color/app_grey_2"
+                    android:textAllCaps="false"
+                    style="@style/heading_medium"
+                    android:gravity="start|top"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="By: Ann Cecilia Diana Emily Fanny Gertrude Hypatia Inez Jane Kate Louisa Maud Nora Orphelia Quince Rebecca Starkey Teresa Ulysis Venus Winifred Xenophen Yetty Zeus Pepper"
+                    />
+            </LinearLayout>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/black"
+                android:paddingStart="@dimen/screen_horizontal_padding"
+                android:paddingEnd="@dimen/screen_horizontal_padding"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    tools:text="Comments: 225632"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    tools:text="mylooooooooooooooooooooooooooooongtextnameeeeeeeeeeeeeee"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    tools:text="mylooooooooooooooooooooooooooooongtextnameeeeeeeeeeeeeee"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_4_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    tools:text="mylooooooooooooooooooooooooooooongtextnameeeeeeeeeeeeeee"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/body_item_4a_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/heading_medium"
+                        android:textColor="@android:color/white"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/experience"
+                        tools:text="@string/experience"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_5_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    tools:text="mylooooooooooooooooooooooooooooongtextnameeeeeeeeeeeeeee"/>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/body_item_6_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="20dp"
+                    tools:text="mylooooooooooooooooooooooooooooongtextnameeeeeeeeeeeeeee"/>
+
+                <Button
+                        android:id="@+id/did_more_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_standard_height"
+                        android:layout_marginTop="@dimen/body_text_button_vertical_margin"
+                        android:background="@drawable/button_standard_bg"
+                        android:text="@string/more"
+                />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
