@@ -18,6 +18,7 @@ import com.innovativequest.cv_app_mvp.utils.PreferencesManager
 import com.innovativequest.cv_app_mvp.models.ItemDataResponse
 import com.innovativequest.cv_app_mvp.screens.home.HomeScreenActivity
 import com.innovativequest.cv_app_mvp.screens.home.mvp.adapter.HomeScreenItemListAdapter
+import com.jakewharton.rxbinding2.view.RxView
 import io.reactivex.Observable
 import com.squareup.picasso.Picasso
 
@@ -30,8 +31,14 @@ class DefaultHomeScreenView (private val homeScreenActivity: HomeScreenActivity,
     @BindView(R.id.default_homeview_toolbar)
     internal lateinit var mToolbar: Toolbar
 
-    @BindView(R.id.home_actionbar_title_centre)
-    internal lateinit var mActionBarTitle: AppCompatTextView
+    @BindView(R.id.title_bk_actionbar_btn_start)
+    internal lateinit var mToolbarStartButton: ImageView
+
+    @BindView(R.id.title_bk_actionbar_btn_end)
+    internal lateinit var mToolbarEndButton: ImageView
+
+    @BindView(R.id.title_bk_actionbar_title_centre)
+    internal lateinit var mToolbarCentreTitle: AppCompatTextView
 
     @BindView(R.id.progressBar)
     internal lateinit var progressBar: ProgressBar
@@ -51,11 +58,15 @@ class DefaultHomeScreenView (private val homeScreenActivity: HomeScreenActivity,
         View.inflate(context, R.layout.default_home_screen_view, this)
         ButterKnife.bind(this)
 
-        mActionBarTitle.text = homeScreenActivity.getString(R.string.app_name)
-
-        mAdapter = HomeScreenItemListAdapter(homeScreenActivity, mPicasso)
+        mToolbarCentreTitle.text = homeScreenActivity.getString(R.string.experience)
+        mToolbarEndButton.visibility    =   View.GONE
+        mAdapter = HomeScreenItemListAdapter(homeScreenActivity)
         mItemsRecyclerView.layoutManager = LinearLayoutManager(homeScreenActivity)
         mItemsRecyclerView.adapter = mAdapter
+    }
+
+    override fun toolbarStartBtnObs(): Observable<Any> {
+        return RxView.clicks(mToolbarStartButton)
     }
 
     override fun setLoading(loading: Boolean) {
@@ -77,7 +88,7 @@ class DefaultHomeScreenView (private val homeScreenActivity: HomeScreenActivity,
 
     override fun setListItems(itemList: List<ItemDataResponse>?) {
         if(itemList!=null && itemList.isNotEmpty()){
-            mAdapter.setData(itemList!!)
+            mAdapter.setData(itemList)
         }
     }
 

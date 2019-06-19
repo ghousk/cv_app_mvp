@@ -15,6 +15,8 @@ interface HomeScreenView {
 
     fun hideKeyBoard()
 
+    fun toolbarStartBtnObs(): Observable<Any>
+
     fun setListItems(itemList: List<ItemDataResponse>?)
 
     fun listItemClicks(): Observable<ItemDataResponse>

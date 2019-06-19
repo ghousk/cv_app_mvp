@@ -1,18 +1,15 @@
 package com.innovativequest.cv_app_mvp.screens.home.mvp.adapter
 
 import android.content.Context
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.innovativequest.cv_app_mvp.R
 import com.innovativequest.cv_app_mvp.models.ItemDataResponse
-import com.squareup.picasso.Picasso
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import java.util.*
@@ -21,7 +18,7 @@ import java.util.*
  * Created by Ghous Khan on 17/06/2019.
  */
 
-class  HomeScreenItemListAdapter(private val context: Context, private val mPicasso: Picasso): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class  HomeScreenItemListAdapter(private val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
     internal var mItemList: MutableList<ItemDataResponse> = ArrayList()
 
@@ -38,7 +35,7 @@ class  HomeScreenItemListAdapter(private val context: Context, private val mPica
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as ItemItemViewHolder).bindNearMeItemItemData(mItemList.get(position), position)
+        (holder as ItemItemViewHolder).bindNearMeItemItemData(mItemList.get(position))
     }
 
 
@@ -58,30 +55,39 @@ class  HomeScreenItemListAdapter(private val context: Context, private val mPica
         @BindView(R.id.item_list_item_artist_tv)
         internal lateinit var artistNameTv: AppCompatTextView
 
-        @BindView(R.id.item_list_item_listeners_tv)
-        internal lateinit var listenersTv: AppCompatTextView
+
+        @BindView(R.id.item_list_item_start_date_tv)
+        internal lateinit var mStartDateTv: AppCompatTextView
+
+
+        @BindView(R.id.item_list_item_end_date_tv)
+        internal lateinit var mEndDateTv: AppCompatTextView
+
+        @BindView(R.id.item_list_item_achievements_tv)
+        internal lateinit var mAchievementsTv: AppCompatTextView
 
 
         @BindView(R.id.item_item_layout)
         internal lateinit var mLayout : View
 
-        @BindView(R.id.progress_bar)
-        lateinit var progressBar  : ProgressBar
-
         init {
             ButterKnife.bind(this,view)
         }
 
-        fun bindNearMeItemItemData(item: ItemDataResponse, currentPosition: Int) {
+        fun bindNearMeItemItemData(item: ItemDataResponse) {
             this.mItem = item
             val relativePos = adapterPosition
 
             try {
-//                itemNameTv.text    = mItem.schoolName
-//
-//                artistNameTv.text   = mItem.location
-//
-//                listenersTv.text    = mItem.schoolEmail
+                itemNameTv.text     = mItem.title
+
+                artistNameTv.text   = mItem.jobTitle
+
+                mStartDateTv.text   =   context.getString(R.string.single_key_value_field_format, context.getString(R.string.start), mItem.startDate)
+
+                mEndDateTv.text     =   context.getString(R.string.single_key_value_field_format, context.getString(R.string.end), mItem.endDate)
+
+                mAchievementsTv.text    = mItem.achievements
 
                 mLayout.setOnClickListener{ clickSubject.onNext(mItemList[relativePos])}
 

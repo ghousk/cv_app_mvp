@@ -50,7 +50,4 @@ class HomeScreenActivity : AppCompatActivity() {
         homeScreenPresenter.onDestroy()
     }
 
-    override fun onBackPressed() {
-        // Intentially do nothing to disable backpress
-    }
 }

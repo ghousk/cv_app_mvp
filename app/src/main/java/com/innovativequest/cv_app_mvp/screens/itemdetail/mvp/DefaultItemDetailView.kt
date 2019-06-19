@@ -79,10 +79,6 @@ class DefaultItemDetailView (private val itemDetailActivity: ItemDetailActivity)
         mToolbarEndButton.visibility = GONE
     }
 
-    override fun toolbarStartBtnObs(): Observable<Any> {
-        return RxView.clicks(mToolbarStartButton)
-    }
-
     override fun moreButtonObs(): Observable<Any> {
         return RxView.clicks(mMoreButton)
     }

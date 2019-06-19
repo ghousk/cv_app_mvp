@@ -17,7 +17,8 @@ class HomeScreenPresenter ( private val homeScreenView: HomeScreenView, private 
 
         compositeDisposable.addAll(
                 loadData(),
-                subscribeToListItemClicks())
+                subscribeToListItemClicks(),
+                subscribeToBackButton())
     }
 
     private fun loadData(): Disposable {
@@ -33,6 +34,12 @@ class HomeScreenPresenter ( private val homeScreenView: HomeScreenView, private 
                     }
                 },
                         { throwable -> homeScreenView.showError(throwable.message!!) })
+    }
+
+    private fun subscribeToBackButton(): Disposable {
+        return homeScreenView.toolbarStartBtnObs().subscribe {
+            homeScreenModel.onBackPressed()
+        }
     }
 
     private fun subscribeToListItemClicks(): Disposable {

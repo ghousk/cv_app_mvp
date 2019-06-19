@@ -23,6 +23,10 @@ class HomeScreenModel(private val mDataService: DataService, private val mHomeSc
         ItemDetailActivity.start(mHomeScreenActivity)
     }
 
+    fun onBackPressed(){
+        mHomeScreenActivity.onBackPressed()
+    }
+
     fun deleteData(){
         mPreferencesManager.clear()
         //Delete DB data here if required

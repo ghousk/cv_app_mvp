@@ -24,7 +24,7 @@
                 app:contentInsetRight="0dp"
                 app:contentInsetStart="0dp">
 
-                <include layout="@layout/home_action_bar"/>
+                <include layout="@layout/title_back_btn_action_bar"/>
 
             </androidx.appcompat.widget.Toolbar>
 

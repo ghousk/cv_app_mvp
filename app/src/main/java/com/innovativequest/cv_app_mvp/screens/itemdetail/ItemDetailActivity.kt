@@ -45,4 +45,7 @@ class ItemDetailActivity : AppCompatActivity() {
         itemDetailPresenter.onDestroy()
     }
 
+    override fun onBackPressed() {
+        // Intentially do nothing to disable backpress
+    }
 }

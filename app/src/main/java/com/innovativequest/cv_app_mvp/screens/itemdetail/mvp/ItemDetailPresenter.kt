@@ -14,9 +14,7 @@ import io.reactivex.functions.BiFunction
 /**
  * Created by Ghous on 17/06/2019.
  */
-class ItemDetailPresenter (private val itemDetailActivity: ItemDetailActivity, private val itemDetailView: ItemDetailView, private  val itemDetailModel: ItemDetailModel,
-                           private val preferencesManager: PreferencesManager
-) {
+class ItemDetailPresenter ( private val itemDetailView: ItemDetailView, private  val itemDetailModel: ItemDetailModel) {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -26,12 +24,6 @@ class ItemDetailPresenter (private val itemDetailActivity: ItemDetailActivity, p
             subscribeMoreButton(),
                 getData())
     }
-
-//    private fun subscribeToBackButton(): Disposable {
-//        return itemDetailView.toolbarStartBtnObs().subscribe {
-//            itemDetailActivity.onBackPressed()
-//        }
-//    }
 
     private fun subscribeMoreButton(): Disposable {
         return itemDetailView.moreButtonObs().subscribe {

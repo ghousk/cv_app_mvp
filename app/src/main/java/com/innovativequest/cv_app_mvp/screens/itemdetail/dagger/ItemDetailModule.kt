@@ -29,7 +29,7 @@ class ItemDetailModule(internal val itemDetailActivity: ItemDetailActivity) {
                             itemDetailModel: ItemDetailModel,
                             preferencesManager: PreferencesManager
     ): ItemDetailPresenter {
-        return ItemDetailPresenter(itemDetailActivity, itemDetailView, itemDetailModel, preferencesManager)
+        return ItemDetailPresenter(itemDetailView, itemDetailModel)
     }
 
     @Provides

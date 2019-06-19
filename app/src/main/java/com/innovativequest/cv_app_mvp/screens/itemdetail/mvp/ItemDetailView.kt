@@ -14,7 +14,5 @@ interface ItemDetailView {
 
     fun setItem(itemItem: ArrayList<ItemDataResponse>, itemDetailFirst: ItemDetailFirst?)
 
-    fun toolbarStartBtnObs(): Observable<Any>
-
     fun moreButtonObs(): Observable<Any>
 }
